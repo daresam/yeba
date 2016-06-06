@@ -26,3 +26,7 @@ Route::get('/admin', function(){
 });
 
 Route::resource('/admin/users', 'AdminUsersController');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
