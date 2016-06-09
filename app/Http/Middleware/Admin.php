@@ -17,14 +17,17 @@ class Admin
     public function handle($request, Closure $next)
     {
 
+//        Checking If the User is Logged in
         if(Auth::check()){
 
             if(Auth::user()->isAdmin()){
 
                 return $next($request);
-            }
-        }
 
+            }
+
+        }
+        
         return redirect('/');
 
 
