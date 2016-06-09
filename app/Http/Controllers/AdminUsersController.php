@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Role;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -77,6 +78,9 @@ class AdminUsersController extends Controller
 
         User::create($input);
 
+//        Flash Message Session
+        Session::flash('created_user', 'The User has been Created');
+
         return redirect('/admin/users');
 
 //        return $request->all();
@@ -126,7 +130,8 @@ class AdminUsersController extends Controller
 
         $user = User::findOrFail($id);
 
-
+//        Flash Message Session
+        Session::flash('updated_user', 'The User has been Updated');
 
 //        To check if Password is empty
 
@@ -170,5 +175,11 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
 
+       User::findOrFail($id)->delete();
+
+//        Flash Message Session
+        Session::flash('deleted_user', 'The User has been Deleted');
+
+       return redirect('/admin/users');
     }
 }

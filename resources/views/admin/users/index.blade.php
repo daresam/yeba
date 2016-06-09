@@ -4,6 +4,29 @@
 
 @section('content')
 
+
+{{--Begginning of Flash Messages --}}
+
+
+    @if(Session::has('deleted_user'))
+
+        <p class ="bg-danger">{{session('deleted_user')}}</p>
+
+    @endif
+
+    @if(Session::has('updated_user'))
+
+        <p class ="bg-danger">{{session('updated_user')}}</p>
+
+    @endif
+
+    @if(Session::has('created_user'))
+
+        <p class ="bg-danger">{{session('created_user')}}</p>
+
+    @endif
+{{--End of Flash Messages --}}
+
     <h1>Users</h1>
 
      <!-- Bootstrap Table Form -->
