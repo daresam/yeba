@@ -50,6 +50,8 @@ class AdminUsersController extends Controller
 //        User::create($request->all());
 //        return redirect('/admin/users');
 
+
+//        To check if Password is empty
         if (trim($request->password) == ''){
 
             $input = $request->except('password');
@@ -126,6 +128,7 @@ class AdminUsersController extends Controller
 
 
 
+//        To check if Password is empty
 
         if (trim($request->password) == ''){
 
@@ -137,6 +140,7 @@ class AdminUsersController extends Controller
 
 
 
+//        To check if Photo then create it
 
         if ($file = $request->file('photo_id')){
 
