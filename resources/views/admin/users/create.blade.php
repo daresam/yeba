@@ -10,7 +10,7 @@
 
      <!-- Form Creation -->
      {!! Form::open(['method' => 'post', 'action' => 'AdminUsersController@store', 'files' =>true]) !!}
-           {{--{{ csrf_field() }}--}}
+           {{ csrf_field() }}
 
            <div class="form-group">
 

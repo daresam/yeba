@@ -18,7 +18,7 @@
 
         <!-- Form Creation -->
         {!! Form::model($user, ['method' => 'PATCH', 'action' => ['AdminUsersController@update', $user->id], 'files' =>true]) !!}
-        {{--{{ csrf_field() }}--}}
+        {{ csrf_field() }}
     
         <div class="form-group">
     
@@ -35,7 +35,7 @@
         <!-- role Form Input -->
         <div class="form-group">
             {!! Form::label('role_id', 'Role:') !!}
-            {!! Form::select('role_id',   $roles, null, ['class' => 'form-control']) !!}
+            {!! Form::select('role_id', ['' => 'Choose Options'] +  $roles, null, ['class' => 'form-control']) !!}
         </div>
     
         <!-- is_active Form Input -->
