@@ -3,6 +3,6 @@
 
 @section('content')
 
-    <h1>Custom 404 Page!!</h1>
+    <h1 class ="text-center">Opps no page available!!</h1>
 
 @stop
