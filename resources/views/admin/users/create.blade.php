@@ -9,7 +9,7 @@
     @include('includes.form-error')
 
      <!-- Form Creation -->
-     {!! Form::open(['method' => 'post', 'action' => 'AdminUsersController@store', 'files' =>true]) !!}
+     {!! Form::open(['method' => 'POST', 'action' => 'AdminUsersController@store', 'files' =>true]) !!}
            {{ csrf_field() }}
 
            <div class="form-group">
