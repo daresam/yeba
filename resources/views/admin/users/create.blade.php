@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-
+@section('title', 'Create Users')
 
 @section('content')
     <h1>Create Users</h1>

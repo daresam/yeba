@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-
+@section('title', 'Update Users')
 
 @section('content')
     <h1>Update Users</h1>
