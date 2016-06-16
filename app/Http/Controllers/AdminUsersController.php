@@ -145,7 +145,7 @@ class AdminUsersController extends Controller
 
 
 
-//        To check if Photo then create it
+//        To check if Photo exist then create it
 
         if ($file = $request->file('photo_id')){
 

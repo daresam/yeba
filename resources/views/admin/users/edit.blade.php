@@ -18,7 +18,7 @@
 
         <!-- Form Creation -->
         {!! Form::model($user, ['method' => 'PATCH', 'action' => ['AdminUsersController@update', $user->id], 'files' =>true]) !!}
-        {{ csrf_field() }}
+        {{--{{ csrf_field() }}--}}
     
         <div class="form-group">
     

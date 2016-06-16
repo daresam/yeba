@@ -4,6 +4,24 @@
 
 @section('content');
 
+    @if(Session::has('updated_post'))
+
+        <p class ="bg-success">{{session('updated_post')}}</p>
+
+    @endif
+
+    @if(Session::has('created_post'))
+
+        <p class ="bg-success">{{session('created_post')}}</p>
+
+    @endif
+
+    @if(Session::has('deleted_post'))
+
+        <p class ="bg-danger">{{session('deleted_post')}}</p>
+
+    @endif
+
   <h1>Posts</h1>
 
      <!-- Bootstrap Table Form -->
@@ -29,11 +47,11 @@
                <td>{{$post->id}}</td>
                {{--<td><img height="50" src=" {{$user->photo ? $user->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>--}}
                <td><img height= "50" src="{{$post->photo ? $post->photo->file : '/images/laravel.jpg' }}" alt=""></td>
-               <td>{{$post->user->name}}</td>
+               <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
                {{--<td>{{$post->user_id}}</td>--}}
                <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
                <td>{{$post->title}}</td>
-               <td>{{$post->body}}</td>
+               <td>{{str_limit($post->body, 30)}}</td>
                <td>{{$post->created_at->diffForHumans()}}</td>
                <td>{{$post->updated_at->diffForHumans()}}</td>
 
